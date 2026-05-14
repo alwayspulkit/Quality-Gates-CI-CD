@@ -100,6 +100,11 @@ k6 run tests/performance/load-test.js
 
 ---
 
+## Quality Gates in Action
+
+<img width="1042" height="235" alt="Screenshot 2026-05-14 at 16 01 02" src="https://github.com/user-attachments/assets/62c0414c-cef5-44fc-866d-830ac695f5cf" />
+
+
 ## Related Writing
 
 - [Stop Chasing Individual Failures](https://pulkitchaturvedi.substack.com/p/stop-chasing-individual-failures) — the thinking behind systematic quality analysis
