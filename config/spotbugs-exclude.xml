@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Exclude generated Spring proxy classes -->
+    <Match>
+        <Class name="~.*\$\$.*"/>
+    </Match>
+    <!-- Exclude main application entry point -->
+    <Match>
+        <Class name="com.pulkit.qualitygates.QualityGatesApplication"/>
+    </Match>
+</FindBugsFilter>
