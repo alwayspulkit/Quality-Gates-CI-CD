@@ -21,7 +21,7 @@
         <testcontainers.version>1.19.3</testcontainers.version>
         <playwright.version>1.40.0</playwright.version>
         <jacoco.version>0.8.11</jacoco.version>
-        <spotbugs.version>4.8.2</spotbugs.version>
+        <spotbugs.version>4.8.6.4</spotbugs.version>
         <checkstyle.version>3.3.1</checkstyle.version>
         <owasp.version>9.0.7</owasp.version>
         <coverage.minimum>0.80</coverage.minimum>
