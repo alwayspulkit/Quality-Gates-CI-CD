@@ -1,6 +1,6 @@
 # CI/CD Quality Gates — Reference Implementation
 
-A production-grade quality pipeline for a Spring Boot REST API. Every gate has a documented threshold and rationale — because a pipeline without decisions is just noise.
+A production-grade quality pipeline for a Spring Boot REST API. Every gate has a documented threshold and rationale.
 
 **Stack:** Java 17 · Spring Boot 3 · JUnit 5 · JaCoCo · SpotBugs · Testcontainers · k6 · GitHub Actions
 
