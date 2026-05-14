@@ -1,2 +1,3 @@
 /Users/pulkit/quality-gates-demo/src/test/java/com/pulkit/qualitygates/unit/BookServiceTest.java
+/Users/pulkit/quality-gates-demo/src/test/java/com/pulkit/qualitygates/unit/BookControllerTest.java
 /Users/pulkit/quality-gates-demo/src/test/java/com/pulkit/qualitygates/integration/BookControllerIntegrationTest.java

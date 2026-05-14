@@ -2,6 +2,12 @@ com/pulkit/qualitygates/unit/BookServiceTest$FindById.class
 com/pulkit/qualitygates/unit/BookServiceTest$Update.class
 com/pulkit/qualitygates/unit/BookServiceTest$Delete.class
 com/pulkit/qualitygates/unit/BookServiceTest$Create.class
+com/pulkit/qualitygates/unit/BookControllerTest$Delete.class
 com/pulkit/qualitygates/integration/BookControllerIntegrationTest.class
 com/pulkit/qualitygates/unit/BookServiceTest$FindAll.class
+com/pulkit/qualitygates/unit/BookControllerTest.class
+com/pulkit/qualitygates/unit/BookControllerTest$Update.class
+com/pulkit/qualitygates/unit/BookControllerTest$Create.class
+com/pulkit/qualitygates/unit/BookControllerTest$GetAll.class
+com/pulkit/qualitygates/unit/BookControllerTest$GetById.class
 com/pulkit/qualitygates/unit/BookServiceTest.class
