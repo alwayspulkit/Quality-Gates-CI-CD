@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">quality-gates-demo</a> &gt; <a href="index.source.html" class="el_package">com.pulkit.qualitygates.service</a> &gt; <span class="el_source">BookService.java</span></div><h1>BookService.java</h1><pre class="source lang-java linenums">package com.pulkit.qualitygates.service;
+
+import com.pulkit.qualitygates.exception.DuplicateResourceException;
+import com.pulkit.qualitygates.exception.ResourceNotFoundException;
+import com.pulkit.qualitygates.model.Book;
+import com.pulkit.qualitygates.repository.BookRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class BookService {
+
+    private final BookRepository repository;
+
+<span class="fc" id="L16">    public BookService(BookRepository repository) {</span>
+<span class="fc" id="L17">        this.repository = repository;</span>
+<span class="fc" id="L18">    }</span>
+
+    public List&lt;Book&gt; findAll() {
+<span class="fc" id="L21">        return repository.findAll();</span>
+    }
+
+    public Book findById(Long id) {
+<span class="fc" id="L25">        return repository.findById(id)</span>
+<span class="fc" id="L26">                .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Book not found with id: &quot; + id));</span>
+    }
+
+    public Book create(Book book) {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (repository.existsByIsbn(book.getIsbn())) {</span>
+<span class="fc" id="L31">            throw new DuplicateResourceException(&quot;Book already exists with ISBN: &quot; + book.getIsbn());</span>
+        }
+<span class="fc" id="L33">        return repository.save(book);</span>
+    }
+
+    public Book update(Long id, Book updated) {
+<span class="fc" id="L37">        Book existing = findById(id);</span>
+<span class="fc" id="L38">        existing.setTitle(updated.getTitle());</span>
+<span class="fc" id="L39">        existing.setAuthor(updated.getAuthor());</span>
+<span class="fc" id="L40">        existing.setPrice(updated.getPrice());</span>
+<span class="fc" id="L41">        return repository.save(existing);</span>
+    }
+
+    public void delete(Long id) {
+<span class="fc" id="L45">        findById(id);</span>
+<span class="fc" id="L46">        repository.deleteById(id);</span>
+<span class="fc" id="L47">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

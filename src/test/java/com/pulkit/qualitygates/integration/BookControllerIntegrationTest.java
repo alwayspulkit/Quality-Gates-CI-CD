@@ -126,4 +126,101 @@ class BookControllerIntegrationTest {
         mockMvc.perform(get("/api/books/" + saved.getId()))
                 .andExpect(status().isNotFound());
     }
+
+    @Test
+    @DisplayName("GET /api/books returns multiple books")
+    void getAllWithBooks() throws Exception {
+        repository.save(new Book("Book 1", "Author 1", "978-1111111111", 10.0));
+        repository.save(new Book("Book 2", "Author 2", "978-2222222222", 20.0));
+        repository.save(new Book("Book 3", "Author 3", "978-3333333333", 30.0));
+
+        mockMvc.perform(get("/api/books"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(3)));
+    }
+
+    @Test
+    @DisplayName("POST /api/books returns 400 when author is blank")
+    void createBookBlankAuthor() throws Exception {
+        Book book = new Book("Valid Title", "", "978-0000000000", 10.0);
+
+        mockMvc.perform(post("/api/books")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(book)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @DisplayName("POST /api/books returns 400 when ISBN is blank")
+    void createBookBlankIsbn() throws Exception {
+        Book book = new Book("Valid Title", "Valid Author", "", 10.0);
+
+        mockMvc.perform(post("/api/books")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(book)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @DisplayName("POST /api/books returns 400 when price is negative")
+    void createBookNegativePrice() throws Exception {
+        Book book = new Book("Valid Title", "Valid Author", "978-0000000000", -10.0);
+
+        mockMvc.perform(post("/api/books")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(book)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @DisplayName("POST /api/books returns 400 when price is zero")
+    void createBookZeroPrice() throws Exception {
+        Book book = new Book("Valid Title", "Valid Author", "978-0000000000", 0.0);
+
+        mockMvc.perform(post("/api/books")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(book)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @DisplayName("POST /api/books returns 400 with multiple validation errors")
+    void createBookMultipleValidationErrors() throws Exception {
+        Book book = new Book("", "", "", -5.0);
+
+        mockMvc.perform(post("/api/books")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(book)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @DisplayName("PUT /api/books/{id} returns 400 when author is blank")
+    void updateBookBlankAuthor() throws Exception {
+        Book saved = repository.save(new Book("Original", "Original Author", "978-1111111111", 20.0));
+        Book updated = new Book("Updated", "", "978-1111111111", 25.0);
+
+        mockMvc.perform(put("/api/books/" + saved.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(updated)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @DisplayName("PUT /api/books/{id} returns 404 when book not found")
+    void updateBookNotFound() throws Exception {
+        Book updated = new Book("Updated", "Author", "978-1111111111", 25.0);
+
+        mockMvc.perform(put("/api/books/999")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(updated)))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @DisplayName("DELETE /api/books/{id} returns 404 when book not found")
+    void deleteBookNotFound() throws Exception {
+        mockMvc.perform(delete("/api/books/999"))
+                .andExpect(status().isNotFound());
+    }
 }

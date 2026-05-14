@@ -1,0 +1,8 @@
+com/pulkit/qualitygates/model/Book.class
+com/pulkit/qualitygates/repository/BookRepository.class
+com/pulkit/qualitygates/service/BookService.class
+com/pulkit/qualitygates/exception/ResourceNotFoundException.class
+com/pulkit/qualitygates/QualityGatesApplication.class
+com/pulkit/qualitygates/controller/BookController.class
+com/pulkit/qualitygates/controller/GlobalExceptionHandler.class
+com/pulkit/qualitygates/exception/DuplicateResourceException.class

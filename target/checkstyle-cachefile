@@ -1,0 +1,12 @@
+#Thu May 14 15:35:13 CEST 2026
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/QualityGatesApplication.java=1778758538428
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/controller/BookController.java=1778758556602
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/controller/GlobalExceptionHandler.java=1778758561110
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/exception/DuplicateResourceException.java=1778758546490
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/exception/ResourceNotFoundException.java=1778758545614
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/model/Book.java=1778758542847
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/repository/BookRepository.java=1778758544664
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/service/BookService.java=1778758552251
+/Users/pulkit/quality-gates-demo/src/main/resources/application-test.properties=1778758564165
+/Users/pulkit/quality-gates-demo/src/main/resources/application.properties=1778758562971
+configuration*?=22F3886BC0098509142C81B0F49D3CA5DA999228

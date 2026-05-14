@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+quality-gates-demo,com.pulkit.qualitygates.model,Book,0,53,0,0,0,17,0,12,0,12
+quality-gates-demo,com.pulkit.qualitygates,QualityGatesApplication,5,3,0,0,2,1,1,1,1,1
+quality-gates-demo,com.pulkit.qualitygates.exception,ResourceNotFoundException,0,4,0,0,0,2,0,1,0,1
+quality-gates-demo,com.pulkit.qualitygates.exception,DuplicateResourceException,0,4,0,0,0,2,0,1,0,1
+quality-gates-demo,com.pulkit.qualitygates.service,BookService,0,75,0,2,0,17,0,8,0,7
+quality-gates-demo,com.pulkit.qualitygates.controller,BookController,0,38,0,0,0,9,0,6,0,6
+quality-gates-demo,com.pulkit.qualitygates.controller,GlobalExceptionHandler,0,43,0,0,0,8,0,5,0,5

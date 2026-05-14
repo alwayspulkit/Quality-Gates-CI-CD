@@ -1,0 +1,8 @@
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/exception/DuplicateResourceException.java
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/model/Book.java
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/exception/ResourceNotFoundException.java
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/repository/BookRepository.java
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/controller/BookController.java
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/service/BookService.java
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/QualityGatesApplication.java
+/Users/pulkit/quality-gates-demo/src/main/java/com/pulkit/qualitygates/controller/GlobalExceptionHandler.java
